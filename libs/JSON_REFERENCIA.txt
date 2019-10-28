@@ -1,0 +1,25 @@
+#Este documento sirve como referencia para añadir nuevas herramientas a la Interfaz grafica
+#Con este archivo se añadira un boton en la parte superior del programa el cual prodra tener dos formatos:
+# Una imagen o un texto
+
+
+{
+"Nombre_Archivo":"Nombre.py",			#Nombre de la herramienta que se añanira a la interfaz
+
+"Clase":"clase",						#Nombre de la clase
+"Metodo":"metodo",						#Nombre del metodo que accionara el boton
+
+"Imagen":1/0,							#1 si tiene formato de imagen 
+"Tipo":"png",							#0 si no tiene formato de imagen 
+"Nombre":"imagen1",						#0 si no tiene formato de imagen 
+
+"Etiqueta":1/0,							#1 si tiene formato de texto
+"Texto":"Texto",						#0 si no tiene formato de texto 
+"Tipografia":"Arial",					#0 si no tiene formato de texto 
+"Size":10								#0 si no tiene formato de texto
+"Color":"#FFFFF"						#0 si no tiene formato de texto , Color en Formato HTML
+}
+
+
+#Si se requiere de mas Parametros para texto o Imagen Avisar
+#Si requiere de otro formato Avisar
