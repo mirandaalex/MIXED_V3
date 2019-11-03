@@ -33,14 +33,17 @@ data=load(data_file)
 tree = listdir(".\\libs\\")
 print(tree)
 for i in tree:
-	if i != "__init__.py" and i !="__pycache__":
+	if i != "__init__.py" and i !="__pycache__" and i !="FrameBackGround.py" and i !="FrameButton.py" and i !="FrameC.py":
 		name = i.replace(".py", "")
 		print(name)
 		name="libs."+name
 		module=importlib.import_module(name)
+		try:
+			class_ = getattr(module, data["Clase"])
+			instance = class_()
+			method_to_call = getattr(instance, data["Metodo"])
+			method_to_call()
+		except Exception as e:
+			print(e)
 		
-		class_ = getattr(module, data["Clase"])
-		instance = class_()
-		method_to_call = getattr(instance, data["Metodo"])
-		method_to_call()
 		

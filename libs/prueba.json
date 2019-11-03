@@ -8,9 +8,16 @@
 "Tipo":"png",							
 "Nombre":"imagen1",						
 
-"Etiqueta":0,							
-"Texto":"Texto",						
+"Etiqueta":1,							
+"Texto":"PruebAA",						
 "Tipografia":"Arial",					
-"Size":10,								
-"Color":"#FFFFF"						
+"Size":15,								
+"Color":"#FFFFFF",
+
+
+"x":0,
+"y":0,
+"Fondo":"#000000",
+"FondoActivo":"#4d86a1",
+"BorderWidth":0							
 }

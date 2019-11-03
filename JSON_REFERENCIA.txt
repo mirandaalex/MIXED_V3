@@ -17,9 +17,20 @@
 "Texto":"Texto",						#0 si no tiene formato de texto 
 "Tipografia":"Arial",					#0 si no tiene formato de texto 
 "Size":10								#0 si no tiene formato de texto
-"Color":"#FFFFF"						#0 si no tiene formato de texto , Color en Formato HTML
+"Color":"#FFFFFF"						#0 si no tiene formato de texto , Color en Formato HTML
+
+
+										#Datos generales
+
+"x":100,								#posicion en x
+"y":0,									#posicion en y
+"Fondo":"#000000", 						#Fondo del boton
+"FondoActivo":"#4d86a1", 				#Fondo cunado se pulsa el boton
+"BorderWidth":0	 						#Borde del boton
 }
 
 
 #Si se requiere de mas Parametros para texto o Imagen Avisar
 #Si requiere de otro formato Avisar
+
+#De usar imagen, se debera guardar en el path donde se encuentra main.py
