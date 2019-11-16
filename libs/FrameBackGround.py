@@ -19,7 +19,7 @@ class BackGround(Frame):
 			#self.master.iconbitmap("image/cod.ico")
 			pass
 		
-		self.master.geometry("1106x649")
+		self.master.geometry("1106x649+150+80")
 		self.master.configure(bg="#343838")
 		self.master.resizable(1,1)
 

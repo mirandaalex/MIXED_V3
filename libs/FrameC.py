@@ -11,4 +11,3 @@ class FrameC(Frame):
 		self.configure(height=524,width=1088,background="#f0f0f0",borderwidth=0)
 		self.place(x=7,y=116)
 
-
