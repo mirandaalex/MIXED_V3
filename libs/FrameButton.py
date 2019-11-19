@@ -58,7 +58,9 @@ class FrameB(Frame):
 										image=render,
 										bg=data["Fondo"],
 										borderwidth=data["BorderWidth"],
-										activebackground=data["FondoActivo"]
+										activebackground=data["FondoActivo"],
+										highlightthickness = 0,
+										cursor="hand2"
 										)
 						nbutton.configure(command=lambda:method_to_call(self.master))
 						nbutton.image=render
@@ -71,7 +73,8 @@ class FrameB(Frame):
 										bg=data["Fondo"],
 										fg=data["Color"],
 										borderwidth=data["BorderWidth"],
-										activebackground=data["FondoActivo"]
+										activebackground=data["FondoActivo"],
+										cursor="hand2"
 										)	
 						nbutton.configure(command=lambda:method_to_call(self.master))
 						nbutton.config(font=(data["Tipografia"],data["Size"]))
@@ -84,7 +87,8 @@ class FrameB(Frame):
 										bg=data["Fondo"],
 										fg=data["Color"],
 										borderwidth=data["BorderWidth"],
-										activebackground=data["FondoActivo"]
+										activebackground=data["FondoActivo"],
+										cursor="hand2"
 										)	
 						nbutton.configure(command=lambda:method_to_call(self.master))
 
