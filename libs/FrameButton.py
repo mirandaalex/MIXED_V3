@@ -18,13 +18,13 @@ class FrameB(Frame):
 
 	
 
-##Buscar un document que se encuetre dentro de  una carpeta el cual empieze por algun digitito o caracter en especial
+	#Se busca todos los elementos dentro del directorio y si es archivo se agrega a una lista que se regresara
 	def __ls(self,ruta = getcwd()):
 		if sys.platform.startswith('win32'):
 			return [ruta+"\\libs\\"+arch.name for arch in scandir(ruta+"\\libs\\") if arch.is_file()]
 		elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
 			return [ruta+"/libs/"+arch.name for arch in scandir(ruta+"/libs/") if arch.is_file()]
-
+	#Si el elemento es un archivo con terminacion json se guarda en la lista de atributos
 	def buscaHerramientas(self):
 		
 		temp=self.__ls()
@@ -34,21 +34,20 @@ class FrameB(Frame):
 				#print(x,"Es igual y funciona")
 
 	def cargarHerramientas(self,data,ruta0 = getcwd()):
+		#se cargan todos los elementos en el directorio ./libs/
 		if sys.platform.startswith('win32'):
 			tree = listdir(ruta0+"\\libs\\")
 		elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
 			tree = listdir(ruta0+"/libs/")
-
 		for i in tree:
-			if i == data["Nombre_Archivo"]:
+			if i == data["Nombre_Archivo"]:#compara si algun archivo se llama igual que a como lo indica en el diccionario del jason
 				name = i.replace(".py", "")
-				#print(name)
 				name="libs."+name
-				module=importlib.import_module(name)
+				module=importlib.import_module(name)#importa el modulo 
 				try:
-					class_ = getattr(module, data["Clase"])
-					instance = class_(self.master)
-					method_to_call = getattr(instance, data["Metodo"])
+					class_ = getattr(module, data["Clase"])#apuntamos a la clase
+					instance = class_(self.master)#creamos una instacia de la clase
+					method_to_call = getattr(instance, data["Metodo"])#cargamos un metodo en la variable
 					#method_to_call()
 					if data["Imagen"]==1:
 						ruta=data["Nombre"]+"."+data["Tipo"]	
@@ -98,9 +97,9 @@ class FrameB(Frame):
 				except Exception as e:
 					print(e)
 
-	
+	#Se usara la lista de archivos json para crear los botones uno por uno
 	def crearBotones(self):
 		for x in self.__tool_list:
 			data_file=open(x,"r") 
-			data=load(data_file)
+			data=load(data_file) #convierte el contenido del archivo en un objeto tipo diccionario
 			self.cargarHerramientas(data)
